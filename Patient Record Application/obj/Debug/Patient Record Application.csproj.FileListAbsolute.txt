@@ -1,0 +1,14 @@
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\bin\Debug\Patient Record Application.exe.config
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\bin\Debug\Patient Record Application.exe
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\bin\Debug\Patient Record Application.pdb
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.csprojAssemblyReference.cache
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\MainWindow.g.cs
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\App.g.cs
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application_MarkupCompile.cache
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\MainWindow.baml
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.g.resources
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient_Record_Application.Properties.Resources.resources
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.csproj.GenerateResource.cache
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.csproj.CoreCompileInputs.cache
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.exe
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.pdb
