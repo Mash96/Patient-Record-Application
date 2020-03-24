@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace Patient_Record_Application
 {
@@ -38,13 +39,10 @@ namespace Patient_Record_Application
             time = dateTime.ToString("T");
             Date_Time = date + " " + time;
 
-            date_time.Text = Date_Time;
+            date_time.Content = Date_Time;
 
             // displaying age
-            String var;
-            var = fName.Text;
-            Console.WriteLine(var);
-            Console.WriteLine(Date_Time);
+     
 
         }
         // saving inputs
@@ -63,7 +61,23 @@ namespace Patient_Record_Application
 
             String birthDate = Date.SelectedDate.Value.Date.ToShortDateString();
 
-            MessageBox.Show(name + " " + address +  " " + gender+ " " + birthDate);
+            String dpt = Department.Text;
+
+            String ward = Ward.Text;
+
+            String doc = Doctor.Text;
+
+            MessageBox.Show(name + " " + address + " " + gender + " " + birthDate + " " + dpt + " " + ward + " " + doc);
+        }
+
+        private void Open_File(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            if (dlg.ShowDialog() == true)
+            {
+                FileBrowser.Text = dlg.FileName;
+            }
+
         }
     }
 }
