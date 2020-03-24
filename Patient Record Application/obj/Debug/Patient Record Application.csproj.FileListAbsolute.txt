@@ -12,3 +12,5 @@ C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Applica
 C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.csproj.CoreCompileInputs.cache
 C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.exe
 C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.pdb
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application_MarkupCompile.lref
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\App.baml

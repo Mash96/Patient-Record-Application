@@ -73,9 +73,18 @@ namespace Patient_Record_Application
         private void Open_File(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.InitialDirectory = @"C:\Users\Maneesha\Desktop\Dips Y-knots\images\";
+            dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" +
+                            "All files (*.*)|*.*";
             if (dlg.ShowDialog() == true)
             {
-                FileBrowser.Text = dlg.FileName;
+                String fileName = dlg.FileName;
+                FileBrowser.Text = fileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(fileName);
+                bitmap.EndInit();
+                ImageViewer.Source = bitmap;
             }
 
         }

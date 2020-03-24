@@ -4,6 +4,15 @@
              xmlns:local="clr-namespace:Patient_Record_Application"
              Startup="Application_Startup">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TextBoxControl" TargetType="{x:Type TextBox}">
+                <Style.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3" />
+                    </Style>
+                </Style.Resources>
+            </Style>
+        </ResourceDictionary>
         
     </Application.Resources>
 </Application>
