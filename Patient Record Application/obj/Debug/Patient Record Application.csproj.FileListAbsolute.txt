@@ -14,3 +14,5 @@ C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Applica
 C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application.pdb
 C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Patient Record Application_MarkupCompile.lref
 C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\App.baml
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Preview.g.cs
+C:\Users\Maneesha\source\repos\Patient Record Application\Patient Record Application\obj\Debug\Preview.baml

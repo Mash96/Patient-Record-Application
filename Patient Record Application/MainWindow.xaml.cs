@@ -22,15 +22,16 @@ namespace Patient_Record_Application
     public partial class MainWindow : Window
 
     {
-
+        Person person = new Person();
         public MainWindow()
             
         {
             String date;
             String time;
             String Date_Time;
+
             InitializeComponent();
-            DataContext = this;
+            // DataContext = this;
 
             // displaying the current date
           
@@ -41,33 +42,41 @@ namespace Patient_Record_Application
 
             date_time.Content = Date_Time;
 
-            // displaying age
-     
+            person.Name = fName.Text;
+
+
 
         }
         // saving inputs
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String name = fName.Text;
 
-            String address = Address.Text;
+            // showing the new window
 
-            String gender;
+            Preview preview = new Preview();
+
+            preview.ViewName.Text = fName.Text;
+
+            preview.ViewAddress.Text = Address.Text;
+
             if (Male.IsChecked == true)
             {
-                gender = Male.Content.ToString();
+                preview.ViewGender.Text = Male.Content.ToString();
             }
-            else gender = Female.Content.ToString();
+            else preview.ViewGender.Text = Female.Content.ToString();
 
-            String birthDate = Date.SelectedDate.Value.Date.ToShortDateString();
+            preview.ViewDob.Text = Date.SelectedDate.Value.Date.ToShortDateString();
 
-            String dpt = Department.Text;
+            preview.ViewAge.Text = Age.Text;
 
-            String ward = Ward.Text;
+            preview.ViewDepartment.Text = Department.Text;
 
-            String doc = Doctor.Text;
+            preview.ViewWard.Text = Ward.Text;
 
-            MessageBox.Show(name + " " + address + " " + gender + " " + birthDate + " " + dpt + " " + ward + " " + doc);
+            preview.ViewDoc.Text = Doctor.Text;
+
+            preview.Show();
+
         }
 
         private void Open_File(object sender, RoutedEventArgs e)
@@ -88,5 +97,40 @@ namespace Patient_Record_Application
             }
 
         }
+
+        private void Button_Clear(Object sender, RoutedEventArgs e)
+        {
+            fName.Text = "";
+
+            Address.Text = "";
+
+            if (Male.IsChecked == true)
+            {
+                Male.IsChecked = false;
+            }
+            else Female.IsChecked = false;
+
+            Date.Text = "";
+
+            Age.Text = "";
+
+            FileBrowser.Text = "";
+
+            ImageViewer.Source = null;
+
+        }
+
+        // using a function to clear text
+
+        //public void ClearBoxes()
+        //{
+        //    foreach (Control clearText in this.Controls)
+        //    {
+        //        if (clearText is TextBox)
+        //        {
+        //            ((TextBox)clearText).Text = string.Empty;
+        //        }
+        //    }
+        //}
     }
 }
