@@ -8,16 +8,110 @@ namespace Patient_Record_Application
 {
     public class Person
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Gender { get; set; }
-        public string Dob { get; set; }
-        public int Age { get; set; }
-        public string Dept { get; set; }
-        public string Ward { get; set; }
-        public string DocInCharge { get; set; }
+        private String name;
+        private String address;
+        private String gender;
+        private String dob;
+        private int age;
+        private String dept;
+        private String ward;
+        private String docInCharge;
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
+        public string Address
+        {
+            get
+            {
+                return address;
+            }
+            set
+            {
+                address = value;
+            }
+        }
+
+        public string Gender
+        {
+            get
+            {
+                return gender;
+            }
+            set
+            {
+                gender = value;
+            }
+        }
+        
+        public string Dob
+        {
+            get
+            {   
+                return dob;
+            }
+            set
+            {
+                dob = value;
+            }
+        }
+       
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                age = value;
+            }
+        }
+
+        public string Dept
+        {
+            get
+            {
+                return dept;
+            }
+            set
+            {
+                dept = value;
+            }
+        }
+
+        public string Ward
+        {
+            get
+            {
+                return ward;
+            }
+            set
+            {
+                ward = value;
+            }
+        }
+
+        public string DocInCharge
+        {
+            get
+            {
+                return docInCharge;
+            }
+            set
+            {
+                docInCharge = value;
+            }
+        }
 
     }
 }

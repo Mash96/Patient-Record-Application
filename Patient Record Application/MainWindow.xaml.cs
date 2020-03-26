@@ -26,59 +26,66 @@ namespace Patient_Record_Application
         public MainWindow()
             
         {
+            InitializeComponent();
+            // this is important for databinding
+            this.DataContext = person;
+
+            // displaying the current date
+            String date_time_value = CurrentDate();
+            date_time.Content = date_time_value;
+
+        }
+
+        // Showing Current Date
+        public string CurrentDate()
+        {
             String date;
             String time;
             String Date_Time;
 
-            InitializeComponent();
-            // DataContext = this;
-
-            // displaying the current date
-          
             DateTime dateTime = DateTime.Now;
             date = dateTime.ToString("d");
             time = dateTime.ToString("T");
             Date_Time = date + " " + time;
+            return Date_Time;
 
-            date_time.Content = Date_Time;
+        } 
 
-            person.Name = fName.Text;
-
-
-
-        }
-        // saving inputs
+        // Print Preview Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             // showing the new window
-
             Preview preview = new Preview();
 
-            preview.ViewName.Text = fName.Text;
+            preview.ViewName.Text = person.Name;
+            preview.ViewAddress.Text = person.Address;
 
-            preview.ViewAddress.Text = Address.Text;
-
+            // #issue 
             if (Male.IsChecked == true)
             {
                 preview.ViewGender.Text = Male.Content.ToString();
             }
-            else preview.ViewGender.Text = Female.Content.ToString();
+            else if (Female.IsChecked == true)
+            {
+                preview.ViewGender.Text = Female.Content.ToString();
+            }
+                
 
-            preview.ViewDob.Text = Date.SelectedDate.Value.Date.ToShortDateString();
-
-            preview.ViewAge.Text = Age.Text;
-
-            preview.ViewDepartment.Text = Department.Text;
-
-            preview.ViewWard.Text = Ward.Text;
-
-            preview.ViewDoc.Text = Doctor.Text;
+            //preview.ViewDob.Text = Date.SelectedDate.Value.Date.ToShortDateString();
+            // #issue
+            preview.ViewDob.Text = person.Dob;     
+            
+            preview.ViewAge.Text =  person.Age.ToString();
+            preview.ViewDepartment.Text = person.Dept;
+            preview.ViewWard.Text = person.Ward;
+            preview.ViewDoc.Text = person.DocInCharge;
+            // preview.ImageViewer2.Source = ImageViewer.Source;
 
             preview.Show();
 
         }
 
+        // Viewing Image Button
         private void Open_File(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -98,11 +105,11 @@ namespace Patient_Record_Application
 
         }
 
+        // Clear the data Button
         private void Button_Clear(Object sender, RoutedEventArgs e)
         {
-            fName.Text = "";
-
-            Address.Text = "";
+            fName.Clear();
+            Address.Clear();
 
             if (Male.IsChecked == true)
             {
@@ -110,27 +117,14 @@ namespace Patient_Record_Application
             }
             else Female.IsChecked = false;
 
-            Date.Text = "";
-
-            Age.Text = "";
-
-            FileBrowser.Text = "";
-
+            Date.Text = String.Empty;
+            Age.Clear();
+            FileBrowser.Clear();
             ImageViewer.Source = null;
+            Department.Text = String.Empty;
+            Ward.Text = String.Empty;
+            Doctor.Text = String.Empty;
 
         }
-
-        // using a function to clear text
-
-        //public void ClearBoxes()
-        //{
-        //    foreach (Control clearText in this.Controls)
-        //    {
-        //        if (clearText is TextBox)
-        //        {
-        //            ((TextBox)clearText).Text = string.Empty;
-        //        }
-        //    }
-        //}
     }
 }

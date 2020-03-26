@@ -71,26 +71,26 @@
 
             <!--Name block-->
             <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStyles}">Name :</Label>
-            <TextBox Style="{StaticResource StyleControl}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Padding="5"  MinHeight="30" Name="fName"/>
+            <TextBox Style="{StaticResource StyleControl}" Text="{Binding Name}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Padding="5"  MinHeight="30" Name="fName"/>
 
             <!--Address block-->
             <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyles}"> Address :</Label>
-            <TextBox Style="{StaticResource StyleControl}" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Address"/>
+            <TextBox Style="{StaticResource StyleControl}" Text="{Binding Address}" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Address"/>
 
             <!--Gender block-->
             <Label  Grid.Row="2" Grid.Column="1" Style="{StaticResource LabelStyles}"> Gender :</Label>
             <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
-                <RadioButton Name="Male" FontSize="14" MinWidth="100">Male</RadioButton>
-                <RadioButton Name="Female" FontSize="14">Female</RadioButton>
+                <RadioButton  Name="Male" FontSize="14" MinWidth="100">Male</RadioButton>
+                <RadioButton  Name="Female" FontSize="14">Female</RadioButton>
             </StackPanel>
 
             <!--Birthdate block-->
             <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource LabelStyles}"> Birthdate :</Label>
-            <DatePicker Style="{StaticResource StyleControl}" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Date"/>
+            <DatePicker Style="{StaticResource StyleControl}" Text="{Binding Dob}" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Date"/>
 
             <!--Age block-->
             <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource LabelStyles}"> Age :</Label>
-            <TextBox Style="{StaticResource StyleControl}" Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Age"/>
+            <TextBox Style="{StaticResource StyleControl}" Text="{Binding Age}" Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Age"/>
 
             <!--Image block-->
             <Label Grid.Row="5" Grid.Column="1" Style="{StaticResource LabelStyles}"> Image :</Label>
@@ -109,7 +109,7 @@
 
             <!--Department block-->
             <Label Grid.Row="7" Grid.Column="1" Style="{StaticResource LabelStyles}"> Department :</Label>
-            <ComboBox Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Department">
+            <ComboBox Text="{Binding Dept}" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Department">
                 <ComboBoxItem IsSelected="True">Orthopedic</ComboBoxItem>
                 <ComboBoxItem>Cardiology</ComboBoxItem>
                 <ComboBoxItem>Neurology</ComboBoxItem>
@@ -121,7 +121,7 @@
     
             <!--Ward Block-->
             <Label Grid.Row="8" Grid.Column="1" Style="{StaticResource LabelStyles}"> Ward :</Label>
-            <ComboBox Grid.Row="8" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Ward">
+            <ComboBox Text="{Binding Ward}" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Ward">
                 <ComboBoxItem IsSelected="True">Cardiology Ward</ComboBoxItem>
                 <ComboBoxItem>Neurology Ward</ComboBoxItem>
                 <ComboBoxItem>Oncology Ward</ComboBoxItem>
@@ -131,7 +131,7 @@
 
             <!--Doctor Block-->
             <Label  Grid.Row="9" Grid.Column="1" Style="{StaticResource LabelStyles}">Doctor In Charge :</Label>
-            <ComboBox Grid.Row="9" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Doctor">
+            <ComboBox Text="{Binding DocInCharge}" Grid.Row="9" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Doctor">
                 <ComboBoxItem IsSelected="True">Dr Asala Perera</ComboBoxItem>
                 <ComboBoxItem>Dr. Janaka Thisera</ComboBoxItem>
                 <ComboBoxItem>Dr. Manik Perera</ComboBoxItem>
