@@ -25,29 +25,31 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
+        <Canvas Grid.RowSpan="2" Grid.ColumnSpan="3" Background="#9dc6a7"></Canvas>
+
         <!--Patient Id block-->
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10">
-            <Label FontSize="16" FontWeight="Bold">
+            <Label FontSize="16" FontWeight="Bold" Foreground="White">
                 Patient ID :
             </Label>
-            <Label Margin="5,0,0,0"  FontSize="16">10001</Label>
+            <Label Margin="5,0,0,0"  FontSize="16" Foreground="White">10001</Label>
         </StackPanel>
 
         <!--Date block-->
         <StackPanel Grid.Row="0" Grid.ColumnSpan="3"  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="10">
-            <Label FontSize="16" FontWeight="Bold">
+            <Label FontSize="16" FontWeight="Bold" Foreground="White">
            Date :
             </Label>
-            <Label Margin="5,0" FontSize="16" Name="date_time"/>
+            <Label Margin="5,0" FontSize="16" Foreground="White" Name="date_time"/>
         </StackPanel>
 
         <!--Title block-->
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="20" FontWeight="Bold" TextDecorations="Underline" MinWidth="200">
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="20" FontWeight="Bold" TextDecorations="Underline" MinWidth="200" Foreground="White">
             Patient Registration Information
         </TextBlock>
 
         <!--First sub Grid-->
-        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="25">
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="25,45,25,25">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -86,7 +88,7 @@
 
             <!--Birthdate block-->
             <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource LabelStyles}"> Birthdate :</Label>
-            <DatePicker Style="{StaticResource StyleControl}" Text="{Binding Dob}" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Date"/>
+            <DatePicker Style="{StaticResource StyleControl}" SelectedDate ="{Binding Path = Dob, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Date"/>
 
             <!--Age block-->
             <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource LabelStyles}"> Age :</Label>

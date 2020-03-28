@@ -5,7 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Patient_Record_Application"
         mc:Ignorable="d"
-        Title="Preview" Height="800" Width="800">
+        MinWidth="750"
+        Title="Preview" Height="900" Width="800">
+    
+    <Window.Resources>
+        <Style x:Key="TextBlockStyleControl" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Grid.ColumnSpan" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="7"/>
+            <Setter Property="Background" Value="#9dc6a7"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2.5*"/>
@@ -14,88 +29,116 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height ="1.5*"/>
             <RowDefinition Height ="1*"/>
-            <RowDefinition Height ="1*"/>
-            <RowDefinition Height ="8*"/>
+            <RowDefinition Height ="5*"/>
+            <RowDefinition Height ="10*"/>
             <RowDefinition Height ="2*"/>
         </Grid.RowDefinitions>
 
+        <Canvas Grid.RowSpan="2" Grid.ColumnSpan="3" Background="#9dc6a7"></Canvas>
+
         <!--Patient Id block-->
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="left" VerticalAlignment="Top" Orientation="Horizontal" Margin="10">
-            <Label FontSize="16" FontWeight="Bold">
+            <Label FontSize="16" FontWeight="Bold" Foreground="White">
                 Patient ID :
             </Label>
-            <Label Margin="5,0,0,0"  FontSize="16">10001</Label>
+            <Label Margin="5,0,0,0"  FontSize="16" Foreground="White">10001</Label>
         </StackPanel>
 
         <!--Date block-->
         <StackPanel Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="10">
-            <Label FontSize="16" FontWeight="Bold">
+            <Label FontSize="16" FontWeight="Bold" Foreground="White">
                 Date :
             </Label>
-            <Label Margin="5,0" FontSize="16" Name="date_time"/>
+            <Label Margin="5,0" FontSize="16" Foreground="White" Name="date_time"/>
         </StackPanel>
 
         <!--Title block-->
-        <StackPanel  Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-            <TextBlock  FontSize="20" FontWeight="Bold" TextDecorations="Underline" Padding="5">
-            Patient Registration Information
-            </TextBlock>
-            <TextBlock HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" TextDecorations="Underline" Padding="5">
-            Print Preview
-            </TextBlock>
-        </StackPanel>
-
-        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Margin="25">
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="20" FontWeight="Bold" TextDecorations="Underline" Foreground="White">
+            Patient Registration Information : Print View
+        </TextBlock>
+        
+        <!--Sub grid-->
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Margin="25,25,25,20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="250*" MinWidth="200"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="600*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--User's image-->
+            <Ellipse Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Height="150" Margin="0,0,30,0" >
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="ImageViewer2"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <!--Name-->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Stretch" Orientation="Horizontal">
+                <Label  Style="{StaticResource LabelStyles}">Patient Name :</Label>
+                <TextBlock  Style="{StaticResource TextBlockStyle}" x:Name="ViewName"/>
+            </StackPanel>
+
+        </Grid>
+        
+        <!--Sub grid-->
+        <Grid Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Margin="25,0,25,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500*"/>
                 <ColumnDefinition Width="500*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
+            <TextBlock Style="{StaticResource TextBlockStyleControl}" Grid.Row="0">Patient Personal Information</TextBlock>
 
-            <!--<Image Grid.RowSpan="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="ImageViewer2" MinWidth="300" MaxWidth="300" MinHeight="300" MaxHeight="300" />-->
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="10">
+                <Label Style="{StaticResource LabelStyles}" HorizontalAlignment="Left" >Address :</Label>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewAddress"/>
+            </StackPanel>
 
-            <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource LabelStyles}">Patient Name :</Label>
-            <TextBlock Grid.Row="2"  Style="{StaticResource TextBlockStyle}" x:Name="ViewName"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="50,10,10,10">
+                <Label  Style="{StaticResource LabelStyles}" HorizontalAlignment="Left">Gender :</Label>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewGender"/>
+            </StackPanel>
 
-            <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource LabelStyles}" >Address :</Label>
-            <TextBlock Grid.Row="3" Style="{StaticResource TextBlockStyle}" x:Name="ViewAddress"/>
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="10">
+                <Label  Style="{StaticResource LabelStyles}" HorizontalAlignment="Left">Date of Birth :</Label>
+                <TextBlock  Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewDob"/>
+            </StackPanel>
 
-            <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource LabelStyles}">Gender:</Label>
-            <TextBlock Grid.Row="4" Style="{StaticResource TextBlockStyle}" x:Name="ViewGender"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="50,10,10,10">
+                <Label Style="{StaticResource LabelStyles}" HorizontalAlignment="Left">Age :</Label>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewAge"/>
+            </StackPanel>
 
-            <Label Grid.Row="5" Grid.Column="1"  Style="{StaticResource LabelStyles}">Date of Birth :</Label>
-            <TextBlock Grid.Row="5" Style="{StaticResource TextBlockStyle}" x:Name="ViewDob"/>
+            <TextBlock Style="{StaticResource TextBlockStyleControl}" Grid.Row="3">Patient Medical Information</TextBlock>
 
-            <Label Grid.Row="6" Grid.Column="1"  Style="{StaticResource LabelStyles}">Age :</Label>
-            <TextBlock Grid.Row="6" Style="{StaticResource TextBlockStyle}" x:Name="ViewAge"/>
+            <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" Margin="10">
+                <Label Style="{StaticResource LabelStyles}" HorizontalAlignment="Left">Department :</Label>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewDepartment"/>
+            </StackPanel>
 
-            <Label Grid.Row="7" Grid.Column="1"  Style="{StaticResource LabelStyles}">Department :</Label>
-            <TextBlock Grid.Row="7" Style="{StaticResource TextBlockStyle}" x:Name="ViewDepartment"/>
+            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" Margin="50,10,10,10">
+                <Label  Style="{StaticResource LabelStyles}" HorizontalAlignment="Left">Ward :</Label>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewWard"/>
+            </StackPanel>
 
-            <Label Grid.Row="8" Grid.Column="1"  Style="{StaticResource LabelStyles}">Ward :</Label>
-            <TextBlock Grid.Row="8" Style="{StaticResource TextBlockStyle}" x:Name="ViewWard"/>
-
-            <Label Grid.Row="9" Grid.Column="1"  Style="{StaticResource LabelStyles}">Doctor in Charge :</Label>
-            <TextBlock Grid.Row="9" Style="{StaticResource TextBlockStyle}" x:Name="ViewDoc"/>
-
+            <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Vertical" Margin="10,10,10,0">
+                <Label  Style="{StaticResource LabelStyles}" HorizontalAlignment="Left">Doctor in Charge :</Label>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Padding="5" x:Name="ViewDoc"/>
+            </StackPanel>
+            
         </Grid>
 
-        <Button Style="{StaticResource ButtonStyle}" Grid.Row="3" Grid.Column="2" Height="30"  Width="95" Click="Button_Print" Content="Print Content">
+        <Button Style="{StaticResource ButtonStyle}" Grid.Row="4" Grid.Column="2" VerticalAlignment="Top" Height="30"  Width="95" Click="Button_Print" Content="Print Content">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="0" Color="LightGray"/>
             </Button.Effect>

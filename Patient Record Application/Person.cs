@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Patient_Record_Application
 {
-    public class Person
+    public class Person 
     {
         private String name;
         private String address;
         private String gender;
-        private String dob;
+        private DateTime dob = DateTime.Now;
         private int age;
         private String dept;
         private String ward;
@@ -53,10 +53,10 @@ namespace Patient_Record_Application
             }
         }
         
-        public string Dob
+        public DateTime Dob
         {
             get
-            {   
+            {
                 return dob;
             }
             set

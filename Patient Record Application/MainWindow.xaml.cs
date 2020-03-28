@@ -69,17 +69,13 @@ namespace Patient_Record_Application
             {
                 preview.ViewGender.Text = Female.Content.ToString();
             }
-                
-
-            //preview.ViewDob.Text = Date.SelectedDate.Value.Date.ToShortDateString();
-            // #issue
-            preview.ViewDob.Text = person.Dob;     
-            
+               
+            preview.ViewDob.Text = person.Dob.ToShortDateString();     
             preview.ViewAge.Text =  person.Age.ToString();
             preview.ViewDepartment.Text = person.Dept;
             preview.ViewWard.Text = person.Ward;
             preview.ViewDoc.Text = person.DocInCharge;
-            // preview.ImageViewer2.Source = ImageViewer.Source;
+            preview.ImageViewer2.ImageSource = ImageViewer.Source;
 
             preview.Show();
 
