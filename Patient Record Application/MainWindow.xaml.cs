@@ -23,6 +23,7 @@ namespace Patient_Record_Application
 
     {
         Person person = new Person();
+        
         public MainWindow()
             
         {
@@ -49,18 +50,36 @@ namespace Patient_Record_Application
             Date_Time = date + " " + time;
             return Date_Time;
 
-        } 
+        }
+
+        //private void checkedValue(object sender, RoutedEventArgs e)
+        //{
+
+        //    var radio = sender as RadioButton;
+        //    person.Gender = Convert.ToString(radio.Name);
+        //    string value = person.Gender;
+        //    preview.ViewGender.Text = value;
+
+
+        //}
 
         // Print Preview Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             // showing the new window
+
             Preview preview = new Preview();
-
             preview.ViewName.Text = person.Name;
-            preview.ViewAddress.Text = person.Address;
+            preview.ViewANum.Text = person.WorkAddress.Number;
+            preview.ViewAStrt.Text = person.WorkAddress.Street;
+            preview.ViewACity.Text = person.WorkAddress.City;
+            
+            //preview.ViewGender.Text = checkedValue(sender, e);
 
-            // #issue 
+            // preview.ViewGender.Text = gender.Male;
+
+            //# issue
             if (Male.IsChecked == true)
             {
                 preview.ViewGender.Text = Male.Content.ToString();
@@ -69,7 +88,7 @@ namespace Patient_Record_Application
             {
                 preview.ViewGender.Text = Female.Content.ToString();
             }
-               
+
             preview.ViewDob.Text = person.Dob.ToShortDateString();     
             preview.ViewAge.Text =  person.Age.ToString();
             preview.ViewDepartment.Text = person.Dept;
@@ -105,7 +124,7 @@ namespace Patient_Record_Application
         private void Button_Clear(Object sender, RoutedEventArgs e)
         {
             fName.Clear();
-            Address.Clear();
+            //Address.Clear();
 
             if (Male.IsChecked == true)
             {

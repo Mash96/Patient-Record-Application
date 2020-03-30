@@ -9,13 +9,13 @@ namespace Patient_Record_Application
     public class Person 
     {
         private String name;
-        private String address;
-        private String gender;
+        private string gender;
         private DateTime dob = DateTime.Now;
         private int age;
         private String dept;
         private String ward;
         private String docInCharge;
+        private Address workAddress = new Address();
 
         public string Name
         {
@@ -26,18 +26,6 @@ namespace Patient_Record_Application
             set
             {
                 name = value;
-            }
-        }
-
-        public string Address
-        {
-            get
-            {
-                return address;
-            }
-            set
-            {
-                address = value;
             }
         }
 
@@ -52,7 +40,19 @@ namespace Patient_Record_Application
                 gender = value;
             }
         }
-        
+
+        public Address WorkAddress
+        {
+            get
+            {
+                return workAddress;
+            }
+            set
+            {
+                workAddress = value;
+            }
+        }
+
         public DateTime Dob
         {
             get
@@ -114,4 +114,5 @@ namespace Patient_Record_Application
         }
 
     }
+
 }
