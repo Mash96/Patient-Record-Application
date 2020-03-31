@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         MinWidth="450"
-        Title="Patient Record Application" Height="950" Width="800" >
+        Title="Patient Record Application" Height="850" Width="800" >
 
     <!--Main Grid-->
     
@@ -20,13 +20,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="18*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Canvas Style="{StaticResource CanvasStyle}"/>
+        <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="#9dc6a7"/>
 
         <!--Patient Id block-->
+        <!--StackPanelPatientID-->
         <StackPanel Style="{StaticResource StackpanelStyle}" Grid.ColumnSpan="2">
             <Label FontSize="16" FontWeight="Bold" Foreground="White">
                 Patient ID :
@@ -35,6 +36,7 @@
         </StackPanel>
 
         <!--Date block-->
+        <!--StackPanelDate-->
         <StackPanel Style="{StaticResource StackpanelStyle}" Grid.ColumnSpan="3" HorizontalAlignment="Right">
             <Label FontSize="16" FontWeight="Bold" Foreground="White">
            Date :
@@ -43,12 +45,13 @@
         </StackPanel>
 
         <!--Title block-->
+        <!--TextBlockTopic-->
         <TextBlock Grid.Row="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center" VerticalAlignment="Stretch" FontSize="20" FontWeight="Bold" TextDecorations="Underline" MinWidth="200" Foreground="White">
             Patient Registration Information
         </TextBlock>
 
         <!--First sub Grid-->
-        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="25,25,25,25">
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="25,25,25,0">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -78,6 +81,7 @@
             <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyles}" VerticalAlignment="Top">Address :</Label>
             <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Top" Margin="0,2">
                 <DockPanel LastChildFill="True" Margin="0,5">
+                    <!--LabelStylesAddress-->
                     <Label Style="{StaticResource LabelStyles}" FontWeight="Medium" FontSize="14" Foreground="Gray">Number :</Label>
                     <TextBox Style="{StaticResource StyleControl}" Text="{Binding WorkAddress.Number}" VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Number"/>
                 </DockPanel>
@@ -95,7 +99,7 @@
 
             <!--Gender block-->
             <Label  Grid.Row="2" Grid.Column="1" Style="{StaticResource LabelStyles}"> Gender :</Label>
-            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,6,0,0">
                 <RadioButton GroupName="Gender" Name="Male" FontSize="14" MinWidth="100">Male</RadioButton>
                 <RadioButton GroupName="Gender" Name="Female" FontSize="14">Female</RadioButton>
             </StackPanel>
@@ -154,7 +158,7 @@
         </Grid>
 
         <!--Buttons Section-->
-        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="20,-16,26,0" >
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="20,10,26,0" >
             <Button Style="{StaticResource ButtonStyle}" Height="30"  Width="90" Margin="0,0,5,0" Click="Button_Click" Content="Print Review"/>
             <Button Style="{StaticResource ButtonStyle}" Height="30" Width="80" Click="Button_Clear" Content="Clear"/>
         </StackPanel>

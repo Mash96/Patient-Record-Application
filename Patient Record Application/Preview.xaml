@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Patient_Record_Application"
         mc:Ignorable="d"
         MinWidth="750"
-        Title="Preview" Height="860" Width="800">
+        Title="Preview" Height="850" Width="800">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,16 +17,15 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height ="1.5*"/>
-            <RowDefinition Height ="1.6*"/>
+            <RowDefinition Height ="1.5*"/>
             <RowDefinition Height ="5*" MinHeight="220"/>
             <RowDefinition Height ="8*" MinHeight="200"/>
             <RowDefinition Height ="6*" MinHeight="100"/>
             <RowDefinition Height ="2*"/>
         </Grid.RowDefinitions>
 
-        <Canvas Style="{StaticResource CanvasStyle}"/>
-
-        <!--Patient Id block-->
+         <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="#9dc6a7"/>
+            <!--Patient Id block-->
         <StackPanel Style="{StaticResource StackpanelStyle}" Grid.ColumnSpan="2">
             <Label FontSize="16" FontWeight="Bold" Foreground="White">
                 Patient ID :
@@ -43,11 +42,10 @@
         </StackPanel>
 
         <!--Title block-->
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" TextDecorations="Underline" Foreground="White">
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" TextDecorations="Underline" Foreground="White">
             Patient Registration Information : Print View
-        </TextBlock>
-
-        <!--Sub grid-->
+            </TextBlock>
+            <!--Sub grid-->
         <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Stretch" Margin="25,10,25,10">
 
             <!--User's image-->
@@ -65,7 +63,7 @@
         </Grid>
 
         <!--Sub grid-->
-        <GroupBox Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Center" Margin="25,-35,25,0">
+        <GroupBox Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Center" Margin="25,-35,25,0" BorderBrush="#FF32AFA9">
             <GroupBox.Header>
                 <TextBlock Style="{StaticResource TextBlockStyleControl}">Patient Personal Information</TextBlock>
             </GroupBox.Header>
@@ -105,7 +103,7 @@
         </GroupBox>
 
         <!--Sub grid-->
-        <GroupBox Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Center" Margin="25,-25,25,0">
+            <GroupBox Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Center" Margin="25,-25,25,0" BorderBrush="#FF32AFA9">
             <GroupBox.Header>
                 <TextBlock Style="{StaticResource TextBlockStyleControl}">Patient Medical Information</TextBlock>
             </GroupBox.Header>
@@ -138,7 +136,7 @@
             </Grid>
         </GroupBox>
 
-        <Button Style="{StaticResource ButtonStyle}" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20,0,26,0"  Height="30"  Width="95" Click="Button_Print" Content="Print Content"/>
+        <Button Style="{StaticResource ButtonStyle}" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20,10,26,0"  Height="30"  Width="95" Click="Button_Print" Content="Print Content"/>
 
     </Grid>
   </ScrollViewer>

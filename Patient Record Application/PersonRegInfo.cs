@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patient_Record_Application
 {
-    public class Person 
+    public class PersonRegInfo 
     {
         private String name;
         private string gender;

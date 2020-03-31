@@ -22,7 +22,7 @@ namespace Patient_Record_Application
     public partial class MainWindow : Window
 
     {
-        Person person = new Person();
+        PersonRegInfo person = new PersonRegInfo();
         
         public MainWindow()
             
@@ -52,17 +52,6 @@ namespace Patient_Record_Application
 
         }
 
-        //private void checkedValue(object sender, RoutedEventArgs e)
-        //{
-
-        //    var radio = sender as RadioButton;
-        //    person.Gender = Convert.ToString(radio.Name);
-        //    string value = person.Gender;
-        //    preview.ViewGender.Text = value;
-
-
-        //}
-
         // Print Preview Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -74,10 +63,6 @@ namespace Patient_Record_Application
             preview.ViewANum.Text = person.WorkAddress.Number;
             preview.ViewAStrt.Text = person.WorkAddress.Street;
             preview.ViewACity.Text = person.WorkAddress.City;
-            
-            //preview.ViewGender.Text = checkedValue(sender, e);
-
-            // preview.ViewGender.Text = gender.Male;
 
             //# issue
             if (Male.IsChecked == true)
@@ -124,7 +109,9 @@ namespace Patient_Record_Application
         private void Button_Clear(Object sender, RoutedEventArgs e)
         {
             fName.Clear();
-            //Address.Clear();
+            Number.Clear();
+            Street.Clear();
+            City.Clear();
 
             if (Male.IsChecked == true)
             {

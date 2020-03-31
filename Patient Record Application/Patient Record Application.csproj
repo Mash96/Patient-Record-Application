@@ -78,7 +78,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
+    <Compile Include="PersonRegInfo.cs" />
     <Compile Include="Preview.xaml.cs">
       <DependentUpon>Preview.xaml</DependentUpon>
     </Compile>

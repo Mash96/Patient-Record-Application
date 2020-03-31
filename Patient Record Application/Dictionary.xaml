@@ -51,12 +51,6 @@
     </Style>
     
     <!--Styles for header template-->
-    <Style x:Key="CanvasStyle" TargetType="{x:Type Canvas}">
-        <Setter Property="Grid.RowSpan" Value="2"/>
-        <Setter Property="Grid.ColumnSpan" Value="3"/>
-        <Setter Property="Background" Value="#9dc6a7"/>
-    </Style>
-
     <Style x:Key="StackpanelStyle" TargetType="{x:Type StackPanel}">
         <Setter Property="Grid.Row" Value="0"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
