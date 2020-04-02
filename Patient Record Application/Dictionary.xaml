@@ -20,6 +20,18 @@
         <Setter Property="Margin" Value="-3,0,15,0"/>
     </Style>
     
+    <!--Style for Address labels-->
+    <Style x:Key="AddressLabelStyles" TargetType="{x:Type Label}" BasedOn="{StaticResource LabelStyles}">
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Gray"/>
+    </Style>
+    
+    <!--Style for Preview labels-->
+    <Style x:Key="PreviewLabelStyles" TargetType="{x:Type Label}" BasedOn="{StaticResource LabelStyles}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    
     <!--Style for Buttons-->
     <Style x:Key="ButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource StyleControl}">
         <Setter Property="FontSize" Value="14"/>
@@ -27,6 +39,8 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderBrush" Value="#32afa9"/>
         <Setter Property="Padding" Value="5"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="95"/>
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="0" Color="LightGray"/>

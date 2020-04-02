@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         MinWidth="450"
-        Title="Patient Record Application" Height="850" Width="800" >
+        Title="Patient Record Application" Height="850" Width="600" >
 
     <!--Main Grid-->
     
@@ -24,7 +24,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="3" Fill="#9dc6a7"/>
+        <Grid Grid.RowSpan="2" Grid.ColumnSpan="3" Background="#9dc6a7"/>
 
         <!--Patient Id block-->
         <!--StackPanelPatientID-->
@@ -62,7 +62,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2.5*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
@@ -78,19 +78,19 @@
             <TextBox Style="{StaticResource StyleControl}" Text="{Binding Name}" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Padding="5"  MinHeight="30" Name="fName"/>
 
             <!--Address block-->
-            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyles}" VerticalAlignment="Top">Address :</Label>
-            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Top" Margin="0,2">
+            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyles}" VerticalAlignment="Top" Margin="0,5.6,15,0" >Address :</Label>
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" Margin="0,2">
                 <DockPanel LastChildFill="True" Margin="0,5">
                     <!--LabelStylesAddress-->
-                    <Label Style="{StaticResource LabelStyles}" FontWeight="Medium" FontSize="14" Foreground="Gray">Number :</Label>
+                    <Label Style="{StaticResource AddressLabelStyles}">Number :</Label>
                     <TextBox Style="{StaticResource StyleControl}" Text="{Binding WorkAddress.Number}" VerticalAlignment="Center" Padding="5" MinHeight="30" Name="Number"/>
                 </DockPanel>
                 <DockPanel LastChildFill="True" Margin="0,5">
-                    <Label Style="{StaticResource LabelStyles}" FontWeight="Medium" FontSize="14" Foreground="Gray">Street :</Label>
+                    <Label Style="{StaticResource AddressLabelStyles}">Street :</Label>
                     <TextBox Style="{StaticResource StyleControl}" Text="{Binding WorkAddress.Street}" VerticalAlignment="Center" Padding="5" Margin="15,0,0,0" MinHeight="30"  Name="Street"/>
                 </DockPanel>
                 <DockPanel LastChildFill="True" Margin="0,5">
-                    <Label Style="{StaticResource LabelStyles}" FontWeight="Medium" FontSize="14" Foreground="Gray">City :</Label>
+                    <Label Style="{StaticResource AddressLabelStyles}">City :</Label>
                     <TextBox Style="{StaticResource StyleControl}" Text="{Binding WorkAddress.City}" VerticalAlignment="Center" Padding="5" Margin="27,0,0,0" MinHeight="30"  Name="City"/>
                 </DockPanel>
                
@@ -138,7 +138,7 @@
             <!--Ward Block-->
             <Label Grid.Row="8" Grid.Column="1" Style="{StaticResource LabelStyles}"> Ward :</Label>
             <ComboBox Text="{Binding Ward}" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Ward">
-                <ComboBoxItem IsSelected="True">Cardiology Ward</ComboBoxItem>
+                <ComboBoxItem IsSelected="False">Cardiology Ward</ComboBoxItem>
                 <ComboBoxItem>Neurology Ward</ComboBoxItem>
                 <ComboBoxItem>Oncology Ward</ComboBoxItem>
                 <ComboBoxItem>Obstetrics and Gynaecology Ward</ComboBoxItem>
@@ -148,7 +148,7 @@
             <!--Doctor Block-->
             <Label  Grid.Row="9" Grid.Column="1" Style="{StaticResource LabelStyles}">Doctor In Charge :</Label>
             <ComboBox Text="{Binding DocInCharge}" Grid.Row="9" Grid.Column="2" VerticalAlignment="Center" FontSize="14" MinHeight="30" Name="Doctor">
-                <ComboBoxItem IsSelected="True">Dr Asala Perera</ComboBoxItem>
+                <ComboBoxItem IsSelected="False">Dr Asala Perera</ComboBoxItem>
                 <ComboBoxItem>Dr. Janaka Thisera</ComboBoxItem>
                 <ComboBoxItem>Dr. Manik Perera</ComboBoxItem>
                 <ComboBoxItem>Dr. Seetha Fonseka</ComboBoxItem>
@@ -159,8 +159,8 @@
 
         <!--Buttons Section-->
         <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="20,10,26,0" >
-            <Button Style="{StaticResource ButtonStyle}" Height="30"  Width="90" Margin="0,0,5,0" Click="Button_Click" Content="Print Review"/>
-            <Button Style="{StaticResource ButtonStyle}" Height="30" Width="80" Click="Button_Clear" Content="Clear"/>
+            <Button Style="{StaticResource ButtonStyle}" Margin="0,0,5,0" Click="Button_Click" Content="Print Preview"/>
+            <Button Style="{StaticResource ButtonStyle}" Click="Button_Clear" Content="Clear"/>
         </StackPanel>
 
     </Grid>

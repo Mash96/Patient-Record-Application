@@ -127,6 +127,13 @@ namespace Patient_Record_Application
             Ward.Text = String.Empty;
             Doctor.Text = String.Empty;
 
+            person.Name = "";
+            person.WorkAddress.Number = "";
+            person.WorkAddress.Street = "";
+            person.WorkAddress.City = "";
+            //person.Dob = null;
+            person.Age = 0;
+
         }
     }
 }
